@@ -3,37 +3,17 @@ import Header from "./components/header"
 import { useState } from "react"
 import type { Cardprops } from "./components/card"
 import Card from "./components/card"
+import data from "@/assets/project.json"
 
 
 function App() {
 
-    const [state, _] = useState<Cardprops[]>([
-        {
-            type: ["school", "group", "project"],
-            title: "Time Virus Game",
-            tech: ["vite", "vanilla", "typescript", "socket.io"],
-            description: `
-                This was a very fun and challenging project where we put all we had learned in frontend and backend to use. 
-                We also learned even more about the importance of dividing code into components and agile teamwork.
-            `,
-            imgAlt: "image off the time virus game",
-            img: "/assets/time-virus-img.png",
-            links: [
-                {
-                    title: "Github",
-                    url: "https://github.com/KaptenKatthatt/time-virus-jo"
-                },
-                {
-                    title: "Website",
-                    url: "https://time-virus-jo-419c273bc3be.herokuapp.com"
-                }
-            ]
-        },
-    ])
+    const [state, _] = useState<Cardprops[]>(data)
+
+    const software = ["javascript", "typescript", "HTML", "CSS", "TailwindCss", "DOTNET", "SQL", "C#"]
+    const tools = ["Git", "Github", "VsCode", "Neovim", "Linux", "vercel", "heroku",]
 
     return (
-
-
         <div className="flex flex-col gap-4 p-4 container mx-auto">
             <Header />
             <div className="grid md:grid-cols-2 gap-2">
@@ -41,19 +21,58 @@ function App() {
                 <div className="flex flex-col gap-2 custom-border p-4 ">
                     <h2 className="font-bold dark:text-cyan-400 text-cyan-600 border-b border-black mb-2">About</h2>
                     <p className="leading-relaxed">
-                        Som person är jag glad, lungn och nyfiken. Har alltid gillat teknik och
-                        programmering. Började plugga till elektriker men fick ett mycket störe intresse för
-                        programmering efter jag började hålla på och mixstra med python några år tillbak.
-                        Efter det så har jag lärt mig själv om programmering och gått lite kurser och
-                        utbildningar inom programmering. Såsom programmering 1, webbserverprogrammering,
-                        systemutveckaler inom DOTNET och nu frontendutvecklare på Medieinstitutet.
+                        <div className="space-y-6 lg:container xl:basis-2/3 ">
+                            <p className="leading-7 not-first:mt-6">
+                                {`
+                                    Hi, my name is Emil. I'm a passionet and kind person
+                                    love to code and play games. Love to work with other that
+                                    find coding interesting and like to solve problems that
+                                    help others. Love to learn new things i'm a very curious
+                                    person.
+                               `}
+                            </p>
+                            <p className="leading-7 not-first:mt-6">
+                                {`
+                                    I learn to code my self, and i found that when i coded and
+                                    something didn't work i couldn't let it go and had to
+                                    figure out why and to solve the problem. When i was play
+                                    games i sometimes wounderd how the game work under the
+                                    hood and how all the system interacted with each other.
+                                `}
+                            </p>
+                        </div>
                     </p>
                 </div>
 
                 <div className="flex flex-col gap-2 custom-border p-4">
                     <h2 className="font-bold dark:text-cyan-400 text-cyan-600 border-b border-black mb-2">Skills</h2>
-                    <p className="leading-relaxed">
-                    </p>
+
+                    <div className="space-y-6">
+
+                        <div className="flex gap-2 flex-col">
+                            <span className="text-neutral-400 text-nowrap">Software skills</span>
+                            <ul className="flex gap-1 capitalize flex-wrap">
+                                {software.map((text, i, arr) => {
+                                    if (arr.length - 1 == i) {
+                                        return <li>{text}</li>
+                                    }
+                                    return <li>{text},</li>
+                                })}
+                            </ul>
+                        </div>
+                        <div className="flex gap-2 flex-col">
+                            <span className="text-neutral-400 text-nowrap">Tool & Services</span>
+                            <ul className="flex gap-1 capitalize flex-wrap">
+                                {tools.map((text, i, arr) => {
+                                    if (arr.length - 1 == i) {
+                                        return <li>{text}</li>
+                                    }
+                                    return <li>{text},</li>
+                                })}
+                            </ul>
+                        </div>
+
+                    </div>
                 </div>
 
 
@@ -61,7 +80,7 @@ function App() {
 
             <div className="flex flex-col gap-2 xl:col-span-2 xl:row-span-3 custom-scrollbar">
                 <h2 className="font-bold dark:text-cyan-400 text-cyan-600 border-b border-black mb-2 text-xl">Projects</h2>
-                <div className="flex flex-col space-y-4 ">
+                <div className="flex flex-col space-y-4">
                     {state.map((item) => (
                         <Card
                             title={item.title}
