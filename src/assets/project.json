@@ -12,7 +12,7 @@
             "MongoDB",
             "heroku"
         ],
-        "description": "It is a 1v1 multiplayer game where you face off aginst another playerto kill the virus the fastest the fastest wins. It was a fun and intersing group projcet projcet learning socket.io.",
+        "description": "It is a 1v1 multiplayer game where you face off aginst another player to kill the virus the fastest the fastest wins. It was a fun and interesting group projcet working with socket.io.",
         "imgAlt": "image off the time virus game",
         "img": "/assets/time-virus-img.png",
         "links": [
@@ -30,7 +30,7 @@
         "type": ["school", "group"],
         "title": "Borta kväll",
         "tech": ["vite", "HTML", "SCSS", "typescript", "netlify"],
-        "description": "This is a candy show where to buy some good an tasty sweets. Fun project to work on and learn to work with api requests.",
+        "description": "This is a candy shop where to buy some good an tasty sweets. Fun project to work on and learn to work with api requests.",
         "imgAlt": "",
         "img": "/assets/bortakvallg4.png",
         "links": [
