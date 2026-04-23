@@ -30,7 +30,7 @@
         "type": ["school", "group"],
         "title": "Borta kväll",
         "tech": ["vite", "HTML", "SCSS", "typescript", "netlify"],
-        "description": "This is a candy show where to buy some good an tasty sweets. Fun project to work on and learn to work with api requests.",
+        "description": "This is a candy shop where to buy some good an tasty sweets. Fun project to work on and learn to work with api requests.",
         "imgAlt": "",
         "img": "/assets/bortakvallg4.png",
         "links": [
