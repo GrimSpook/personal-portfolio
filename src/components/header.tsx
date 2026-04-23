@@ -25,6 +25,9 @@ function Header() {
                     <li className="underline font-bold hover:text-cyan-600 text-cyan-400">
                         <a href="https://www.linkedin.com/in/emilstr" target="_blank">Linkedin</a>
                     </li>
+                    <li className="underline font-bold hover:text-cyan-600 text-cyan-400">
+                        <a href="/assets/CV.pdf" target="_blank">Cv</a>
+                    </li>
                 </ul>
 
             </div>
