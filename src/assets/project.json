@@ -1,5 +1,19 @@
 [
     {
+        "type": ["personal", "tool"],
+        "title": "Dashboard cli for wezterm",
+        "tech": ["go", "lipgloss", "bubbletea"],
+        "description": "This is a TUI(terminal user interface) for switching workspaces in wezterm",
+        "imgAlt": "",
+        "img": "/assets/dashboard.png",
+        "links": [
+            {
+                "title": "Github",
+                "url": "https://github.com/GrimSpook/dashboard"
+            }
+        ]
+    },
+    {
         "type": ["school", "group"],
         "title": "Time Virus Game",
         "tech": [
