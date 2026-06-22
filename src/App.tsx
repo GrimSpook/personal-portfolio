@@ -8,7 +8,7 @@ import data from "@/assets/project.json"
 
 function App() {
 
-    const [state, _] = useState<Cardprops[]>(data)
+    const [state] = useState<Cardprops[]>(data)
 
     const software = ["javascript", "typescript", "HTML", "CSS", "TailwindCss", "DOTNET", "SQL", "C#"]
     const tools = ["Git", "Github", "VsCode", "Neovim", "Linux", "vercel", "heroku",]
@@ -20,7 +20,7 @@ function App() {
 
                 <div className="flex flex-col gap-2 custom-border p-4 ">
                     <h2 className="font-bold dark:text-cyan-400 text-cyan-600 border-b border-black mb-2">About</h2>
-                    <p className="leading-relaxed">
+                    <div className="leading-relaxed">
                         <div className="space-y-6 lg:container xl:basis-2/3 ">
                             <p className="leading-7 not-first:mt-6">
                                 {`
@@ -41,7 +41,7 @@ function App() {
                                 `}
                             </p>
                         </div>
-                    </p>
+                    </div>
                 </div>
 
                 <div className="flex flex-col gap-2 custom-border p-4">
@@ -52,22 +52,23 @@ function App() {
                         <div className="flex gap-2 flex-col">
                             <span className="text-neutral-400 text-nowrap">Software skills</span>
                             <ul className="flex gap-1 capitalize flex-wrap">
-                                {software.map((text, i, arr) => {
-                                    if (arr.length - 1 == i) {
-                                        return <li>{text}</li>
-                                    }
-                                    return <li>{text},</li>
+                                {software.map((text, index, arr) => {
+                                    return <li key={index}>
+                                        {text}
+                                        {arr.length > 1 && index < arr.length - 1 && <>,</>}
+                                    </li>
+
                                 })}
                             </ul>
                         </div>
                         <div className="flex gap-2 flex-col">
                             <span className="text-neutral-400 text-nowrap">Tool & Services</span>
                             <ul className="flex gap-1 capitalize flex-wrap">
-                                {tools.map((text, i, arr) => {
-                                    if (arr.length - 1 == i) {
-                                        return <li>{text}</li>
-                                    }
-                                    return <li>{text},</li>
+                                {tools.map((text, index, arr) => {
+                                    return <li key={index}>
+                                        {text}
+                                        {arr.length > 1 && index < arr.length - 1 && <>,</>}
+                                    </li>
                                 })}
                             </ul>
                         </div>
@@ -80,9 +81,10 @@ function App() {
 
             <div className="flex flex-col gap-2 xl:col-span-2 xl:row-span-3 custom-scrollbar">
                 <h2 className="font-bold dark:text-cyan-400 text-cyan-600 border-b border-black mb-2 text-xl">Projects</h2>
-                <div className="flex flex-col space-y-4">
+                <div className="flex flex-col gap-4">
                     {state.map((item) => (
                         <Card
+                            key={item.title}
                             title={item.title}
                             tech={item.tech}
                             description={item.description}
