@@ -1,5 +1,23 @@
 [
     {
+        "type": ["school"],
+        "title": "Swapi Starwars wiki",
+        "tech": ["React", "HTML", "SCSS", "Bootstrap", "React bootstrap"],
+        "description": "A Wiki for Starwars movies, characters and all things Starwars",
+        "imgAlt": "",
+        "img": "/assets/swapi.png",
+        "links": [
+            {
+                "title": "Website",
+                "url": "https://swapi-starwars-wiki.netlify.app/"
+            },
+            {
+                "title": "Github",
+                "url": "https://github.com/GrimSpook/swapi"
+            }
+        ]
+    },
+    {
         "type": ["personal", "tool"],
         "title": "Dashboard cli for wezterm",
         "tech": ["go", "lipgloss", "bubbletea"],
@@ -9,7 +27,7 @@
         "links": [
             {
                 "title": "Github",
-                "url": "https://github.com/GrimSpook/dashboard"
+                "url": "https://swapi-starwars-wiki.netlify.app/"
             }
         ]
     },

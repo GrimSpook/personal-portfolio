@@ -1,3 +1,5 @@
+import { Dot } from "lucide-react"
+import React from "react"
 
 interface link {
     title: string
@@ -24,30 +26,35 @@ function Card(props: Cardprops) {
                 <div className="flex gap-2 ">
                     <span className="text-neutral-400">Type:</span>
                     <ul className="flex gap-1 capitalize flex-wrap">
-                        {props.type.map((text, i, arr) => {
-                            if (arr.length - 1 == i) {
-                                return <li>{text}</li>
-                            }
-                            return <li>{text},</li>
+                        {props.type.map((text, index, arr) => {
+                            return <li key={index}>
+                                {text}
+                                {arr.length > 1 && index < arr.length - 1 && <>,</>}
+                            </li>
                         })}
                     </ul>
                 </div>
                 <div className="flex gap-2 ">
                     <span className="text-neutral-400">Tech:</span>
                     <ul className="flex gap-1 capitalize flex-wrap">
-                        {props.tech.map((text, i, arr) => {
-                            if (arr.length - 1 == i) {
-                                return <li>{text}</li>
-                            }
-                            return <li>{text},</li>
+                        {props.tech.map((text, index, arr) => {
+                            return <li key={index}>
+                                {text}
+                                {arr.length > 1 && index < arr.length - 1 && <>,</>}
+                            </li>
                         })}
                     </ul>
                 </div>
                 <div className="flex gap-2 ">
                     <span className="text-neutral-400">Links:</span>
-                    <ul className="flex gap-1 capitalize flex-wrap">
-                        {props.links.map((link) => {
-                            return <li className="underline font-bold hover:text-cyan-600 text-cyan-400"><a href={link.url}>{link.title}</a></li>
+                    <ul className="flex capitalize flex-wrap">
+                        {props.links.map((link, index, arr) => {
+                            return <React.Fragment key={index}>
+                                <li className="underline font-bold hover:text-cyan-600 text-cyan-400">
+                                    <a href={link.url} target="_blank">{link.title}</a>
+                                </li>
+                                {arr.length > 1 && index < arr.length - 1 && <Dot className="text-neutral-400" />}
+                            </React.Fragment>
                         })}
                     </ul>
                 </div>
